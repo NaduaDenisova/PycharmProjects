@@ -2,6 +2,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
+
 options = webdriver.ChromeOptions()
 options.add_argument("--incognito")
 options.add_experimental_option("prefs", {
@@ -40,8 +41,8 @@ url_inventory2 = driver.current_url
 assert url_inventory2 == "https://www.saucedemo.com/cart.html", f"Ожидался заголовок 'https://www.saucedemo.com/cart.html', но получен '{url_inventory2}'"
 time.sleep(2)
 
-сhec_button = driver.find_element("xpath", "//button[@id='checkout']")
-сhec_button.click()
+chec_button = driver.find_element("xpath", "//button[@id='checkout']")
+chec_button.click()
 
 url_inventory3 = driver.current_url
 assert url_inventory3 == "https://www.saucedemo.com/checkout-step-one.html", f"Ожидался заголовок 'https://www.saucedemo.com/checkout-step-one.html', но получен '{url_inventory3}'"
