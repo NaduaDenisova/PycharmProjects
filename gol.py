@@ -40,8 +40,8 @@ url_inventory2 = driver.current_url
 assert url_inventory2 == "https://www.saucedemo.com/cart.html", f"Ожидался заголовок 'https://www.saucedemo.com/cart.html', но получен '{url_inventory2}'"
 time.sleep(2)
 
-сheckout_button = driver.find_element("xpath", "//button[@id='checkout']")
-сheckout_button.click()
+сhec_button = driver.find_element("xpath", "//button[@id='checkout']")
+сhec_button.click()
 
 url_inventory3 = driver.current_url
 assert url_inventory3 == "https://www.saucedemo.com/checkout-step-one.html", f"Ожидался заголовок 'https://www.saucedemo.com/checkout-step-one.html', но получен '{url_inventory3}'"
@@ -50,13 +50,13 @@ time.sleep(2)
 first_name = driver.find_element("xpath", "//input[@id='first-name']")
 last_name = driver.find_element("xpath", "//input[@id='last-name']")
 zip = driver.find_element("xpath", "//input[@id='postal-code']")
-input = driver.find_element("xpath", "//input[@id='continue']")
+input_tab = driver.find_element("xpath", "//input[@id='continue']")
 
 first_name.send_keys("Nadua")
 last_name.send_keys("Denisova")
 zip.send_keys("140009")
 time.sleep(2)
-input.click()
+input_tab.click()
 time.sleep(2)
 
 url_inventory4 = driver.current_url
